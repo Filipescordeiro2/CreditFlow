@@ -63,15 +63,7 @@ graph TD;
     B -->|tp-order-status-updated| D[credit-analysis-service]
     D -->|tp-credit-analysis-completed| E[client-card-credit-service]
 ```
-
-## Tópicos Kafka
-
-| Tópico                   | Origem                 | Destino                  | Finalidade                                           |
-|--------------------------|------------------------|--------------------------|------------------------------------------------------|
-| `tp-order-created`       | `order-analyze-service`| --                       | Publica novo pedido gerado                           |
-| `order-status-updated`  | Atualização (manual ou automática) | `credit-analysis-service` | Atualiza o status da Order antes da análise         |
-| `credit-analysis-completed` | `credit-analysis-service` | `client-card-credit-service` | Envia os dados da análise de crédito concluída       |
-
+---
 ## Princípios SOLID Aplicados
 
 S – Single Responsibility: Cada microserviço tem uma responsabilidade única bem definida.
@@ -84,6 +76,8 @@ I – Interface Segregation: Separação de contratos conforme necessidades espe
 
 D – Dependency Inversion: As dependências são injetadas, promovendo baixo acoplamento e alta coesão.
 
+---
+
 ## Futuras Melhorias
 
 - Integração com serviços externos de score real.
@@ -93,6 +87,8 @@ D – Dependency Inversion: As dependências são injetadas, promovendo baixo ac
 - Dashboard de controle com consumo via Kafka.
 
 - Testes automatizados com JUnit e Testcontainers.
+
+---
 
 ## Criado por
 
