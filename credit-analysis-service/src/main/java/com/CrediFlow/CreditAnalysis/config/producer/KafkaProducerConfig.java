@@ -1,5 +1,6 @@
 package com.CrediFlow.CreditAnalysis.config.producer;
 
+import com.CrediFlow.CreditAnalysis.domain.CreditAnalysis;
 import com.CrediFlow.CreditAnalysis.dto.CreditAnalysisResponse;
 import com.CrediFlow.CreditAnalysis.model.Order;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -41,8 +42,8 @@ public class KafkaProducerConfig {
     }
 
     @Bean
-    public KafkaTemplate<String, CreditAnalysisResponse> kafkaTemplateCreditAnalysisResponse() {
-        return new KafkaTemplate<>(producerFactory(CreditAnalysisResponse.class));
+    public KafkaTemplate<String, CreditAnalysis> kafkaTemplateCreditAnalysisResponse() {
+        return new KafkaTemplate<>(producerFactory(CreditAnalysis.class));
     }
 
     @Bean
