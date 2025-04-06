@@ -23,6 +23,45 @@ Criar uma solução escalável, robusta e desacoplada para processar pedidos de 
 
 ---
 
+## Rodando com Docker Compose
+
+Para facilitar a execução local da stack completa (bancos, Kafka e microsserviços), foi disponibilizado um arquivo docker-compose.yml
+
+***Subindo os containers***
+```bash
+docker-compose up --build
+```
+
+## Serviços inclusos
+
+`mongo-db` – MongoDB para OrderAnalyze e CreditAnalysis
+
+`postgres-db` – PostgreSQL para ClientCardCredit
+
+`kafka` – Servidor Kafka
+
+`redpanda-console` – Interface web para monitorar tópicos Kafka
+
+`order-analyze-service` – Microsserviço de pedidos
+
+`credit-analysis-service` – Microsserviço de análise de crédito
+
+`client-card-credit-service` – Microsserviço de geração de cartão
+
+## Portas
+
+| Serviço                   | Porta Externa | Descrição                          |
+|---------------------------|---------------|------------------------------------|
+| MongoDB                   | 27017         | Banco de dados NoSQL               |
+| PostgreSQL                | 5432          | Banco de dados relacional          |
+| Kafka                     | 9092          | Broker de mensagens Kafka          |
+| Redpanda Console          | 8081          | Interface de visualização Kafka    |
+| order-analyze-service     | 3001          | API de pedidos                     |
+| credit-analysis-service   | 3002          | API de análise de crédito          |
+| client-card-credit-service| 3003          | API de geração de cartão           |
+
+---
+
 ## Estrutura de Microsserviços
 
 ### 1. **order-analyze-service**
