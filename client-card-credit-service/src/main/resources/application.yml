@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/client_credit_db
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: false
+
+  kafka:
+    bootstrap-servers: ${KAFKA_BROKER:localhost:9092}
+    consumer:
+      group-id: client-card-credit-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.add.type.headers: false
