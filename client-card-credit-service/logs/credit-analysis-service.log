@@ -1,0 +1,89 @@
+2025-04-07T16:51:04.184-03:00  INFO 13188 --- [main] c.C.C.ClientCardCreditApplicationTests   : Starting ClientCardCreditApplicationTests using Java 22.0.2 with PID 13188 (started by USER in C:\Users\USER\Desktop\projetos\CreditFlow\client-card-credit-service)
+2025-04-07T16:51:04.186-03:00  INFO 13188 --- [main] c.C.C.ClientCardCreditApplicationTests   : No active profile set, falling back to 1 default profile: "default"
+2025-04-07T16:51:05.253-03:00  INFO 13188 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-07T16:51:05.365-03:00  INFO 13188 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 92 ms. Found 1 JPA repository interface.
+2025-04-07T16:51:06.089-03:00  INFO 13188 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-07T16:51:06.205-03:00  INFO 13188 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-04-07T16:51:06.261-03:00  INFO 13188 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-07T16:51:06.857-03:00  INFO 13188 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-07T16:51:06.944-03:00  INFO 13188 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-07T16:51:07.320-03:00  INFO 13188 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4bbf20d1
+2025-04-07T16:51:07.323-03:00  INFO 13188 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-07T16:51:07.413-03:00  INFO 13188 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-07T16:51:08.781-03:00  INFO 13188 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-07T16:51:08.823-03:00  INFO 13188 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-07T16:51:09.630-03:00  WARN 13188 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-07T16:51:10.815-03:00  INFO 13188 --- [main] c.C.C.ClientCardCreditApplicationTests   : Started ClientCardCreditApplicationTests in 7.414 seconds (process running for 9.325)
+2025-04-07T16:51:11.566-03:00  INFO 13188 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : client-card-credit-group: partitions assigned: [credit-analysis-completed-0]
+2025-04-07T16:51:11.632-03:00  INFO 13188 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : client-card-credit-group: partitions revoked: [credit-analysis-completed-0]
+2025-04-07T16:51:12.117-03:00  INFO 13188 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : client-card-credit-group: Consumer stopped
+2025-04-07T16:51:12.122-03:00  INFO 13188 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-07T16:51:12.127-03:00  INFO 13188 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-07T16:51:12.138-03:00  INFO 13188 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-04-07T17:06:25.494-03:00  INFO 16524 --- [main] c.C.C.ClientCardCreditApplication        : Starting ClientCardCreditApplication using Java 22.0.2 with PID 16524 (C:\Users\USER\Desktop\projetos\CreditFlow\client-card-credit-service\target\classes started by USER in C:\Users\USER\Desktop\projetos\CreditFlow\client-card-credit-service)
+2025-04-07T17:06:25.497-03:00  INFO 16524 --- [main] c.C.C.ClientCardCreditApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-04-07T17:06:26.616-03:00  INFO 16524 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-07T17:06:26.760-03:00  INFO 16524 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 119 ms. Found 1 JPA repository interface.
+2025-04-07T17:06:27.773-03:00  INFO 16524 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-07T17:06:27.801-03:00  INFO 16524 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-07T17:06:27.801-03:00  INFO 16524 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-07T17:06:27.881-03:00  INFO 16524 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-07T17:06:27.881-03:00  INFO 16524 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2317 ms
+2025-04-07T17:06:28.158-03:00  INFO 16524 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-07T17:06:28.235-03:00  INFO 16524 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-04-07T17:06:28.286-03:00  INFO 16524 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-07T17:06:28.749-03:00  INFO 16524 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-07T17:06:28.785-03:00  INFO 16524 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-07T17:06:29.024-03:00  INFO 16524 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@30c01c37
+2025-04-07T17:06:29.026-03:00  INFO 16524 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-07T17:06:29.098-03:00  INFO 16524 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-07T17:06:30.327-03:00  INFO 16524 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-07T17:06:30.376-03:00  INFO 16524 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-07T17:06:31.087-03:00  WARN 16524 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-07T17:06:31.804-03:00  INFO 16524 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-07T17:06:32.280-03:00  INFO 16524 --- [main] c.C.C.ClientCardCreditApplication        : Started ClientCardCreditApplication in 7.649 seconds (process running for 8.197)
+2025-04-07T17:06:46.784-03:00  INFO 16524 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : client-card-credit-group: partitions assigned: [credit-analysis-completed-0]
+2025-04-07T17:07:26.431-03:00  INFO 16524 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : client-card-credit-group: partitions revoked: [credit-analysis-completed-0]
+2025-04-07T17:07:26.637-03:00  INFO 16524 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : client-card-credit-group: Consumer stopped
+2025-04-07T17:07:26.640-03:00  INFO 16524 --- [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-07T17:07:26.645-03:00  INFO 16524 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-04-07T17:07:26.650-03:00  INFO 16524 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-07T17:07:26.653-03:00  INFO 16524 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-07T17:07:26.659-03:00  INFO 16524 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-04-07T17:07:43.170-03:00  INFO 13836 --- [main] c.C.C.ClientCardCreditApplicationTests   : Starting ClientCardCreditApplicationTests using Java 22.0.2 with PID 13836 (started by USER in C:\Users\USER\Desktop\projetos\CreditFlow\client-card-credit-service)
+2025-04-07T17:07:43.174-03:00  INFO 13836 --- [main] c.C.C.ClientCardCreditApplicationTests   : No active profile set, falling back to 1 default profile: "default"
+2025-04-07T17:07:44.253-03:00  INFO 13836 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-07T17:07:44.382-03:00  INFO 13836 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 109 ms. Found 1 JPA repository interface.
+2025-04-07T17:07:45.269-03:00  INFO 13836 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-07T17:07:45.422-03:00  INFO 13836 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-04-07T17:07:45.510-03:00  INFO 13836 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-07T17:07:45.997-03:00  INFO 13836 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-07T17:07:46.043-03:00  INFO 13836 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-07T17:07:46.267-03:00  INFO 13836 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2404abe2
+2025-04-07T17:07:46.269-03:00  INFO 13836 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-07T17:07:46.365-03:00  INFO 13836 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-07T17:07:47.497-03:00  INFO 13836 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-07T17:07:47.579-03:00  INFO 13836 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-07T17:07:48.517-03:00  WARN 13836 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-07T17:07:49.745-03:00  INFO 13836 --- [main] c.C.C.ClientCardCreditApplicationTests   : Started ClientCardCreditApplicationTests in 7.304 seconds (process running for 8.979)
