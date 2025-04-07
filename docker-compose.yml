@@ -1,3 +1,5 @@
+version: "3.8"
+
 services:
   # MongoDB para OrderAnalyze e CreditAnalysis
   mongo-db:
@@ -59,15 +61,16 @@ services:
     networks:
       - crediflow-network
     environment:
-      KAFKA_BROKERS: "kafka:29092"  # Define o broker do Kafka
+      KAFKA_BROKERS: "kafka:29092"
     depends_on:
       - kafka
 
-
   # Microsserviço OrderAnalyze
   order-analyze-service:
-    build: './order-analyze-service'
     container_name: order-analyze-service
+    build:
+      context: ./order-analyze-service
+      dockerfile: Dockerfile
     depends_on:
       - mongo-db
       - kafka
@@ -75,14 +78,16 @@ services:
       - crediflow-network
     environment:
       - KAFKA_BROKER=kafka:29092
-      - MONGO_DB_URI=mongodb://admin:123456@mongo-db:27017/crediflow
+      - MONGO_DB_URI=mongodb://admin:123456@mongo-db:27017
     ports:
       - "3001:3000"
 
   # Microsserviço CreditAnalysis
   credit-analysis-service:
-    build: './credit-analysis-service'
     container_name: credit-analysis-service
+    build:
+      context: ./credit-analysis-service
+      dockerfile: Dockerfile
     depends_on:
       - mongo-db
       - kafka
@@ -90,14 +95,16 @@ services:
       - crediflow-network
     environment:
       - KAFKA_BROKER=kafka:29092
-      - MONGO_DB_URI=mongodb://admin:123456@mongo-db:27017/crediflow
+      - MONGO_DB_URI=mongodb://admin:123456@mongo-db:27017
     ports:
       - "3002:3000"
 
   # Microsserviço ClientCardCredit
   client-card-credit-service:
-    build: './client-card-credit-service'
     container_name: client-card-credit-service
+    build:
+      context: ./client-card-credit-service
+      dockerfile: Dockerfile
     depends_on:
       - postgres-db
       - kafka
