@@ -24,6 +24,7 @@ spring:
 
 logging:
   level:
-    org:
-      apache:
-        kafka: OFF
+    root: INFO
+    org.apache.kafka: OFF
+  file:
+    name: logs/credit-analysis-service.log

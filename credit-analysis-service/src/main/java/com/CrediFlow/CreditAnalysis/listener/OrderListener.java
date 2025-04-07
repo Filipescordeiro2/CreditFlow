@@ -1,11 +1,12 @@
 package com.CrediFlow.CreditAnalysis.listener;
 
+
 import com.CrediFlow.CreditAnalysis.model.Order;
-import com.CrediFlow.CreditAnalysis.service.CreditAnalysisService;
+import com.CrediFlow.CreditAnalysis.utils.AnalyzeCredit.AnalyzeCredit;
+import com.CrediFlow.CreditAnalysis.utils.KafkaTemplate.producerOrder.KafkaMessagePublisherOrder;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
-import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
@@ -15,8 +16,8 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 public class OrderListener {
 
-    private final CreditAnalysisService creditAnalysisService;
-    private final KafkaTemplate<String, Order> kafkaTemplate;
+    private final AnalyzeCredit analyzeCredit;
+    private final KafkaMessagePublisherOrder messagePublisherProducer;
 
     @KafkaListener(topics = "order-created", groupId = "credit-analysis-group")
     public void consumeOrder(Order order) {
@@ -26,12 +27,8 @@ public class OrderListener {
         order.setValidCredit(true);
         order.setUpdateAt(LocalDateTime.now());
 
-       kafkaTemplate.send("order-status-updated", order);
-       creditAnalysisService.analyze(order);
+        analyzeCredit.analyze(order);
 
-       log.info("Enviando order atualizada para o Kafka: {}",order);
-       log.info("Finalizando o metodo [OrderListener - consumeOrder]");
+        log.info("Finalizando o metodo [OrderListener - consumeOrder]");
     }
-
-
 }

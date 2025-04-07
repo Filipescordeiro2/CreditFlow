@@ -1,4 +1,4 @@
-package com.CrediFlow.ClientCardCredit.utils.cardNumber;
+package com.CrediFlow.ClientCardCredit.utils.CriarCartao.cardNumber;
 
 
 import lombok.RequiredArgsConstructor;

@@ -14,6 +14,7 @@ public class Order {
     private String id;
     private String cpf;
     private String nameClient;
+    private String handleName;
 
     private boolean isValidCredit;
     private LocalDateTime creatAt;

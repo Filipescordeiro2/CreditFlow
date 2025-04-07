@@ -18,4 +18,7 @@ public class OrderRequest {
     @NotBlank(message = "nameClient is required")
     private String nameClient;
 
+    @NotBlank(message = "handleName is required")
+    private String handleName;
+
 }

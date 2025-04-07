@@ -1,4 +1,4 @@
-package com.CrediFlow.ClientCardCredit.utils.best.ShoppingDay;
+package com.CrediFlow.ClientCardCredit.utils.CriarCartao.best.ShoppingDay;
 
 
 import lombok.RequiredArgsConstructor;
