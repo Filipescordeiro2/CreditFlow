@@ -1,4 +1,4 @@
-package com.CrediFlow.OrderAnalyze.utils.KafkaListener;
+package com.CrediFlow.OrderAnalyze.listener;
 
 import com.CrediFlow.OrderAnalyze.domain.Order;
 import com.CrediFlow.OrderAnalyze.repository.OrderRespository;
@@ -9,12 +9,10 @@ import java.time.LocalDateTime;
 
 @Component
 @RequiredArgsConstructor
-public class OrderUpdateImpl implements OrderUpdate{
-
+public class OrderUpdate{
 
     private final OrderRespository orderRespository;
 
-    @Override
     public void updateOrderStatus(Order order) {
         Order existingOrder = orderRespository.findById(order.getId())
                 .orElseThrow(() -> new IllegalArgumentException("Ordem não encontrada"));

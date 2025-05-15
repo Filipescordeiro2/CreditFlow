@@ -1,4 +1,4 @@
-package com.CrediFlow.CreditAnalysis.utils.CreditAnalysis;
+package com.CrediFlow.CreditAnalysis.utils.creditAnalysis;
 
 
 import lombok.RequiredArgsConstructor;

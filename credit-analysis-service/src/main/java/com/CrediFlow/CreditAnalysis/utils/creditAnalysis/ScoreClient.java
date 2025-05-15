@@ -1,4 +1,4 @@
-package com.CrediFlow.CreditAnalysis.utils.CreditAnalysis;
+package com.CrediFlow.CreditAnalysis.utils.creditAnalysis;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -10,7 +10,6 @@ import java.util.Random;
 @Slf4j
 @RequiredArgsConstructor
 public class ScoreClient implements ScoreClientGereted{
-
 
     @Override
     public Integer validateScore() {

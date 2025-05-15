@@ -1,4 +1,4 @@
-package com.CrediFlow.ClientCardCredit.utils.Listener;
+package com.CrediFlow.ClientCardCredit.listener;
 
 import com.CrediFlow.ClientCardCredit.domain.CardClient;
 import com.CrediFlow.ClientCardCredit.model.CreditAnalysis;
@@ -19,7 +19,7 @@ import java.math.BigDecimal;
 @Component
 @Slf4j
 @RequiredArgsConstructor
-public class CardClientCreationImpl implements CardClientCreation {
+public class CardClientCreation {
 
     private final CardClientRepository cardClientRepository;
     private final ExpirationDateImp expirationDateImp;
@@ -29,7 +29,6 @@ public class CardClientCreationImpl implements CardClientCreation {
     private final GeneretedExpiration generetedExpiration;
     private final GeneretedPassword generetedPassword;
 
-    @Override
     public void generateCard(CreditAnalysis creditAnalysis) {
         if (creditAnalysis.getLimitApproved().compareTo(BigDecimal.ZERO) <= 0) {
             log.warn("Limite de crédito não aprovado. Cancelando a geração do cartão.");

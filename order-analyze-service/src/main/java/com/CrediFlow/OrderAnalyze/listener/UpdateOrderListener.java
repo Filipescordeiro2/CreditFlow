@@ -1,7 +1,6 @@
 package com.CrediFlow.OrderAnalyze.listener;
 
 import com.CrediFlow.OrderAnalyze.domain.Order;
-import com.CrediFlow.OrderAnalyze.utils.KafkaListener.OrderUpdate;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;

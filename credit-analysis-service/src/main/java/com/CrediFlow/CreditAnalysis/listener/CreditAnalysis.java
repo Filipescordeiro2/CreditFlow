@@ -1,14 +1,13 @@
-package com.CrediFlow.CreditAnalysis.utils.AnalyzeCredit;
+package com.CrediFlow.CreditAnalysis.listener;
 
+import com.CrediFlow.CreditAnalysis.config.template.KafkaMessagePublisher;
 import com.CrediFlow.CreditAnalysis.mapper.CreditAnalysisMapper;
 import com.CrediFlow.CreditAnalysis.model.Order;
 import com.CrediFlow.CreditAnalysis.repository.CreditAnalysisRepository;
-import com.CrediFlow.CreditAnalysis.utils.CreditAnalysis.LimiteClient;
-import com.CrediFlow.CreditAnalysis.utils.CreditAnalysis.ScoreClient;
-import com.CrediFlow.CreditAnalysis.utils.KafkaTemplate.producerCreditAnalysis.MessagePublisherCreditAnalysis;
-import com.CrediFlow.CreditAnalysis.utils.KafkaTemplate.producerOrder.KafkaMessagePublisherOrder;
-import com.CrediFlow.CreditAnalysis.validation.CreditAnalysis.ValidateApprovedCredit;
-import com.CrediFlow.CreditAnalysis.validation.CreditAnalysis.ValidateFinancialIssues;
+import com.CrediFlow.CreditAnalysis.utils.creditAnalysis.LimiteClient;
+import com.CrediFlow.CreditAnalysis.utils.creditAnalysis.ScoreClient;
+import com.CrediFlow.CreditAnalysis.validation.creditAnalysis.ValidateApprovedCredit;
+import com.CrediFlow.CreditAnalysis.validation.creditAnalysis.ValidateFinancialIssues;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -16,17 +15,15 @@ import java.math.BigDecimal;
 
 @Component
 @RequiredArgsConstructor
-public class CreditAnalysisImpl implements AnalyzeCredit {
+public class CreditAnalysis {
 
     private final CreditAnalysisRepository creditAnalysisRepository;
     private final ValidateApprovedCredit validateApprovedCredit;
     private final ValidateFinancialIssues validateFinancialIssues;
     private final LimiteClient limiteClient;
     private final ScoreClient scoreClient;
-    private final MessagePublisherCreditAnalysis messagePublisherCreditAnalysis;
-    private final KafkaMessagePublisherOrder messagePublisherOrder;
+    private final KafkaMessagePublisher kafkaMessagePublisher;
 
-    @Override
     public void analyze(Order order) {
         var score = scoreClient.validateScore();
         var financialIssue = validateFinancialIssues.validate();
@@ -39,8 +36,8 @@ public class CreditAnalysisImpl implements AnalyzeCredit {
         if (!approvedCredit || limite.compareTo(BigDecimal.ZERO) <= 0) {
             throw new RuntimeException("Crédito não aprovado");
         }
-        messagePublisherOrder.publish("order-status-updated",order);
-        messagePublisherCreditAnalysis.publish("credit-analysis-completed",creditAnalysis);
+        kafkaMessagePublisher.publish("order-status-updated",order);
+        kafkaMessagePublisher.publish("credit-analysis-completed",creditAnalysis);
     }
 
 }

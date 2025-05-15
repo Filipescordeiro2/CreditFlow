@@ -1,4 +1,4 @@
-package com.CrediFlow.CreditAnalysis.validation.CreditAnalysis;
+package com.CrediFlow.CreditAnalysis.validation.creditAnalysis;
 
 
 public interface CreditAnalysisValidator {

@@ -2,8 +2,6 @@ package com.CrediFlow.CreditAnalysis.listener;
 
 
 import com.CrediFlow.CreditAnalysis.model.Order;
-import com.CrediFlow.CreditAnalysis.utils.AnalyzeCredit.AnalyzeCredit;
-import com.CrediFlow.CreditAnalysis.utils.KafkaTemplate.producerOrder.KafkaMessagePublisherOrder;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -16,8 +14,7 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 public class OrderListener {
 
-    private final AnalyzeCredit analyzeCredit;
-    private final KafkaMessagePublisherOrder messagePublisherProducer;
+    private final CreditAnalysis creditAnalysis;
 
     @KafkaListener(topics = "order-created", groupId = "credit-analysis-group")
     public void consumeOrder(Order order) {
@@ -27,7 +24,7 @@ public class OrderListener {
         order.setValidCredit(true);
         order.setUpdateAt(LocalDateTime.now());
 
-        analyzeCredit.analyze(order);
+        creditAnalysis.analyze(order);
 
         log.info("Finalizando o metodo [OrderListener - consumeOrder]");
     }

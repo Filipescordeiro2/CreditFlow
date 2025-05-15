@@ -1,4 +1,4 @@
-package com.CrediFlow.OrderAnalyze.utils.KafikaTemplate;
+package com.CrediFlow.OrderAnalyze.config.template;
 
 import com.CrediFlow.OrderAnalyze.domain.Order;
 import lombok.RequiredArgsConstructor;
@@ -7,11 +7,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class KafkaMessagePublisher implements MessagePublisher{
+public class KafkaMessagePublisher {
 
     private final KafkaTemplate<String, Order> kafkaTemplate;
 
-    @Override
     public void publish(String topic, Order message) {
         kafkaTemplate.send(topic, message);
     }
